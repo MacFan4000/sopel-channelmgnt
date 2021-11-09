@@ -17,7 +17,7 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
         with:
           access_token: ${{ github.token }}
-      - uses: actions/checkout@v2.3.4
+      - uses: actions/checkout@v2.4.0
         with:
           submodules: true
       - name: Python ${{ matrix.python }} Compatibility Checks on ${{ matrix.os }}
