@@ -21,7 +21,7 @@ jobs:
         with:
           submodules: true
       - name: Python ${{ matrix.python }} Compatibility Checks on ${{ matrix.os }}
-        uses: actions/setup-python@v2.2.2
+        uses: actions/setup-python@v2.3.1
         with:
           python-version: ${{ matrix.python }} 
       - name: Install packages
