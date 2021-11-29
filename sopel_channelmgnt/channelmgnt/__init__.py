@@ -384,6 +384,7 @@ def topic(bot, trigger):
             bot.write(('TOPIC', channel + ' :' + topictext))
             if dodeop:
                 deopbot(trigger.sender, bot)
+            return None
         else:
             return bot.reply('Access Denied. If in error, please contact the channel founder.')
     return bot.reply(f'No ChanOps Found. Please ask for assistance in {bot.settings.channelmgnt.support_channel}')
