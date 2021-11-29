@@ -253,7 +253,7 @@ def parse_host_mask(text):
         if m is not None:
             return f'*!{m.group(1)}@{m.group(2)}'
 
-        m = re.match('^([^!@]+)!(^[!@]+)@?$', mask)
+        m = re.match('^([^!@]+)!([^!@]+)@?$', mask)
         if m is not None:
             return f'{m.group(1)}!{m.group(2)}@*'
 
