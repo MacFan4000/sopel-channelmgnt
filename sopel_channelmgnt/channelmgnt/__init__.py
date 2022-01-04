@@ -135,22 +135,16 @@ def makemodechange(bot, trigger, mode, isusermode=False, isbqmode=False, selfsaf
         if (isusermode and not trigger.group(2) and selfsafe
            or isusermode and not trigger.group(2) and trigger.account in chanops):
             bot.write(['MODE', trigger.sender, mode, trigger.nick])
-            if dodeop:
-                deopbot(trigger.sender, bot)
         elif isusermode and trigger.account in chanops:
             bot.write(['MODE', trigger.sender, mode, trigger.group(2)])
-            if dodeop:
-                deopbot(trigger.sender, bot)
         elif isbqmode and trigger.account in chanops:
             bot.write(['MODE', trigger.sender, mode, parse_host_mask(trigger.group().split())])
-            if dodeop:
-                deopbot(trigger.sender, bot)
         elif trigger.account in chanops:
             bot.write(['MODE', trigger.sender, mode])
-            if dodeop:
-                deopbot(trigger.sender, bot)
         else:
             bot.reply('Access Denied. If in error, please contact the channel founder.')
+        if dodeop:
+                deopbot(trigger.sender, bot)
 
     else:
         bot.reply(f'No ChanOps Found. Please ask for assistance in {bot.settings.channelmgnt.support_channel}')
