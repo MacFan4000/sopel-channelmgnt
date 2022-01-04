@@ -144,7 +144,7 @@ def makemodechange(bot, trigger, mode, isusermode=False, isbqmode=False, selfsaf
         else:
             bot.reply('Access Denied. If in error, please contact the channel founder.')
         if dodeop:
-                deopbot(trigger.sender, bot)
+            deopbot(trigger.sender, bot)
 
     else:
         bot.reply(f'No ChanOps Found. Please ask for assistance in {bot.settings.channelmgnt.support_channel}')
